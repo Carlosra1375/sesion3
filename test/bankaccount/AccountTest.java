@@ -31,9 +31,10 @@ public class AccountTest extends TestCase{
     }
     
     @Before
+    @Override
     public void setUp() {
-         _12345 = new Account(50);
-         _67890 = new Account(0);
+         _12345 = new Account(50.00);
+         _67890 = new Account(0.00);
     }
     
     @After
@@ -44,10 +45,10 @@ public class AccountTest extends TestCase{
      * Test of withdraw method, of class Account.
      */
     @Test
-    public void testWithdraw() {
+    public void testWithdraw() throws Exception {
         System.out.println("withdraw");
-        double money = 100;
-        Account instance = new Account(100);
+        Double money = 100.00;
+        Account instance = new Account(100.00);
         assertEquals(true, instance.withdraw(money));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -59,9 +60,9 @@ public class AccountTest extends TestCase{
     @Test
     public void testDeposit() {
         System.out.println("deposit");
-        double money = 100;
-        Account instance = new Account(100);
-        assertEquals(200, instance.deposit(money));
+        Double money = 100.00;
+        Account instance = new Account(100.00);
+        assertEquals(200.00, instance.deposit(money));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
@@ -70,23 +71,23 @@ public class AccountTest extends TestCase{
      * Test of deposit method, of class Account.
      */
     @Test
-    public void testTDD14() {
+    public void testTDD14() throws Exception {
         System.out.println("TDD14");
              
-        _12345.withdraw(200);
-        _67890.withdraw(350);
+        _12345.withdraw(200.00);
+        _67890.withdraw(350.00);
         
-        _12345.deposit(100);
-        _67890.withdraw(200);
+        _12345.deposit(100.00);
+        _67890.withdraw(200.00);
         
-        _67890.withdraw(150);
-        _12345.withdraw(200);
+        _67890.withdraw(150.00);
+        _12345.withdraw(200.00);
         
-        _67890.deposit(50);
-        _67890.withdraw(100);
+        _67890.deposit(50.00);
+        _67890.withdraw(100.00);
         
-        assertEquals(-250,_12345.balance);     
-        assertEquals(-500,_67890.balance);
+        assertEquals(-250.00,_12345.balance);     
+        assertEquals(-450.00,_67890.balance);
     }
     
 }
