@@ -15,11 +15,11 @@ public class Account {
         this.balance = balance;
     }
     
-    public double withdraw(double money){
-        return 0;
+    public boolean withdraw(double money){
+        return false;
     }
     
-    public boolean deposit(double money){
-        return false;
+    public double deposit(double money){
+        return 0;
     }
 }
